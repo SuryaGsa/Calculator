@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>CalCulator</title>
+        <title>Calculator</title>
+    <script>
+        //Function To Display Values On screen
+        function dis(value) {
+            document.getElementById("screen").value += value;
+        }
+        
+        // Function For Evaluation
+        function solve() {
+            let x = document.getElementById("screen").value;
+            let y = eval(x);
+            document.getElementById("screen").value = y;
+        }
+        
+        //Function For clearing the screen
+        function clr() {
+            document.getElementById("screen").value = ""
+        }
+        
+        //backspacing
+        function backspace() {
+            let screen = document.getElementById("screen").value;
+            document.getElementById("screen").value = screen.substring(0,-1);
+        }
+        </script>
+</head>
+<body>
+    <div Class="container">
+        <div Class="calculator">
+            <input type="text" class="screen" placeholder="0" id="screen">
+            <button class="highlight" onClick="clr()">Clr</button>
+            <button class="highlight" onClick="backspace()">Del</button>
+            <button class="highlight" onClick="dis('%')">%</button>
+            <button class="highlight" onClick="dis('/')">/</button>
+            <button onClick="dis('7')">7</button>
+            <button onClick="dis('8')">8</button>
+            <button onClick="dis('9')">9</button>
+            <button class="highlight" onClick="dis('*')">*</button>
+            <button onClick="dis('4')">4</button>
+            <button onClick="dis('5')">5</button>
+            <button onClick="dis('6')">6</button>
+            <button class="highlight" onClick="dis('-')">-</button>
+            <button onClick="dis('1')">1</button>
+            <button onClick="dis('2')">2</button>
+            <button onClick="dis('3')">3</button>
+            <button class="highlight" onClick="dis('+')">+</button>
+            <button onClick="dis('.')"><b>.</b></button>
+            <button onClick="dis('0')">0</button>
+            <button onClick="solve('=')" Class="equal">=</button>
+        </div>
+    </div> 
+</body>
+</html>
